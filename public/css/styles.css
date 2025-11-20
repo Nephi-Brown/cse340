@@ -1,8 +1,9 @@
-*,
-*::before,
-*::after {
+/* ************** Base / Reset ************* */
+*, *::before, *::after {
   box-sizing: border-box;
 }
+
+/* *************** Tokens / Theme ************* */
 
 :root {
   --ink: #111827;
@@ -16,7 +17,11 @@
   --bg-check: url("/images/site/checkerboard.jpg");
 }
 
-html, body { height: 100%; }
+/* *************** Document Body ************* */
+
+html, body { 
+  height: 100%; 
+}
 
 body {
   margin: 0;
@@ -30,6 +35,8 @@ body {
   background-size: auto;
 }
 
+/* *************** Layout Wrapper ************* */
+
 #wrapper {
   max-width: 960px;
   margin: 1.25rem auto;
@@ -41,7 +48,14 @@ body {
   overflow: hidden;
 }
 
-a { color: var(--accent); }
+/* *************** Links************* */
+ 
+a { 
+  color: var(--accent);
+  font-weight: 500; 
+}
+
+/* *************** Header ************* */
 
 #top-header {
   display: flex;
@@ -54,13 +68,111 @@ a { color: var(--accent); }
   color: var(--ink);
   text-decoration: none;
   font-weight: 800;
-  font-size: 1.9rem;
+  font-size: 3rem;
   letter-spacing: .2px;
 }
 
-#top-header .acc { font-size: .95rem; }
-#top-header .acc a { color: var(--muted); text-decoration: none; }
-#top-header .acc a:hover, #top-header .acc a:focus { color: var(--ink); text-decoration: underline; }
+#top-header .acc { 
+  font-size: 1rem; 
+  font-weight: 500;
+}
+
+#top-header .acc a { 
+  color: var(--muted); 
+  text-decoration: none; 
+}
+
+#top-header .acc a:hover, 
+#top-header .acc a:focus { 
+  color: var(--ink); 
+  text-decoration: underline; 
+}
+
+/* ===============================
+   Login Page Styles (Pop-up Box)
+================================== */
+
+#login-page {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background: #243447;          /* dark blue like example */
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  max-width: 520px;
+  width: 100%;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-form label {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.login-form input {
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.login-btn {
+  margin: 1rem auto 0;
+  padding: 0.6rem 2.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 999px;   /* pill-shaped like the image */
+  background: #ffffff;
+  color: #243447;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background: #e5e7eb;
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.signup-text a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Flash message (optional) */
+.flash-message {
+  background: #ffe5e5;
+  color: #8b0000;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin: 0 0 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Hide h1 visually if you use visually-hidden */
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+/* *************** Main nav ************* */
 
 nav {
   background: var(--nav);
@@ -88,7 +200,7 @@ nav a {
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   transition: background .3s ease, color .3s ease;
 }
 
@@ -96,6 +208,8 @@ nav a:hover, nav a:focus {
   background: #fff;
   color: var(--nav);
 }
+
+/* *************** Welcomen************* */
 
 main {
   padding: 1rem;
@@ -105,11 +219,38 @@ main {
 
 #home { padding: 1rem; }
 
-.hero { padding: .25rem 0 1rem; }
+/* *************** Welcome ************* */
+ #messages {
+  background-color: #ffe5e5;
+  color: #b30000; /* deep red text */
+  border: 1px solid #ff9999;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-radius: 6px;
+  font-weight: 600;
+}
 
-.hero-card { padding: .25rem 0; }
+/* *************** Hero ************* */
 
-.hero h2 { font-size: 1.65rem; margin: .25rem 0 .75rem; }
+.hero { 
+  padding: .25rem 0 1rem; 
+}
+
+.hero-card { 
+  padding: .25rem 0; 
+}
+
+.hero h1 { 
+  font-size: 2.65rem; 
+  color: var(--accent);
+  margin: .25rem 0 .75rem; 
+}
+
+.hero h2 { 
+  font-size: 2.35rem; 
+  color: var(--accent-2);
+  margin: .25rem 0 .75rem; 
+}
 
 .product {
   position: relative;
@@ -146,9 +287,14 @@ main {
   font-weight: 800;
 }
 
-.product-features { margin: 0 0 .65rem; padding-left: 1rem; }
+.product-features { 
+  margin: 0 0 .65rem; 
+  padding-left: 1rem; 
+}
 
-.product-features li { margin: .1rem 0; }
+.product-features li { 
+  margin: .1rem 0; 
+}
 
 .own-today img {
   display: inline-block;
@@ -156,6 +302,8 @@ main {
   height: auto;
   border-radius: 8px;
 }
+
+/* *************** Reviews & Upgrades(Content Columns)************* */
 
 .columns {
   display: grid;
@@ -212,6 +360,124 @@ main {
   text-decoration: underline;
 }
 
+/* ******************* Inventory Cards ****************** */
+
+/* The grid that holds all cards */
+#inv-display {
+  list-style: none;
+  margin: 2rem 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 320px));
+  justify-content: center;   
+  justify-items: center;     
+  gap: 1.5rem;
+}
+
+/* Individual card */
+#inv-display li {
+  width: 320px;             
+  background: var(--panel);
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Vehicle image */
+#inv-display li img {
+  width: 100%;
+  height: 190px;            
+  object-fit: cover;
+  display: block;
+}
+
+/* Name + price section */
+#inv-display .namePrice {
+  border-top: 2px solid var(--ink);
+  padding: 1rem;
+  text-align: center;
+}
+
+#inv-display .namePrice h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+#inv-display .namePrice h2 a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+#inv-display .namePrice span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Hover effect */
+#inv-display li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+  transition: 0.18s ease;
+}
+
+/* ******************* Vehicle Detail View ****************** */
+
+.vehicle-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  align-items: flex-start;
+}
+
+.vehicle-detail__image-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.vehicle-detail__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vehicle-detail__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.vehicle-detail__title {
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+}
+
+.vehicle-detail__price,
+.vehicle-detail__miles,
+.vehicle-detail__color {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.vehicle-detail .label {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.vehicle-detail__description {
+  margin-top: 0.75rem;
+  line-height: 1.6;
+}
+
+/* *************** Footer ************* */
+
 footer {
   display: flex;
   justify-content: flex-start;
@@ -222,11 +488,26 @@ footer {
   border-radius: 0 0 10px 10px;
 }
 
+/* *************** Media - Larger Screens/ Responsive ************* */
+
 @media (min-width: 900px) {
-  #wrapper { padding: 0 0 1.25rem; }
-  #top-header { padding: 1rem 1.25rem 2.25rem; }
-  header#top-header + nav { margin: -2rem 0 1.25rem; border-radius: 0; }
-  .hero-card { padding: 0 1.25rem; }
+  #wrapper { 
+    padding: 0 0 1.25rem; 
+  }
+
+  #top-header { 
+    padding: 1rem 1.25rem 2.25rem; 
+  }
+
+  header#top-header + nav { 
+    margin: -2rem 0 1.25rem; 
+    border-radius: 0; 
+  }
+
+  .hero-card { 
+    padding: 0 1.25rem; 
+  }
+
   .product-copy {
     left: 2.25rem;
     top: 2rem;
@@ -238,15 +519,32 @@ footer {
     line-height: 1.45;
     font-size: 1rem;
   }
-  .product-title { font-size: 1.8rem; }
-  .own-today img { width: 200px; }
+
+  .product-title { 
+    font-size: 1.8rem; 
+  }
+  .own-today img { 
+    width: 200px; 
+  }
+
   .columns {
     grid-template-columns: 1fr 1fr;
     gap: 1.25rem;
     padding: 0 1.25rem 1.25rem;
   }
-  .columns section:nth-child(1) { order: 2; }
-  .columns section:nth-child(2) { order: 1; }
+
+  .columns section:nth-child(1) { 
+    order: 2; 
+  }
+
+  .columns section:nth-child(2) { 
+    order: 1; 
+  }
+
+  .vehicle-detail {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+    gap: 2rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -259,5 +557,10 @@ footer {
   nav a {
     padding: 0.4rem 0.6rem;
     font-size: 0.9rem;
+  }
+
+  #inv-display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
