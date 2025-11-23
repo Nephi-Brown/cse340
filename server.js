@@ -15,6 +15,8 @@ const static = require("./routes/static")
 const baseController = require("./controllers/baseController")
 const utilities = require("./utilities/")
 const inventoryRoute = require("./routes/inventoryRoute")
+const accountRoute = require("./routes/accountRoute") 
+const bodyParser = require("body-parser")
 
 /* ***********************
  * Middleware
@@ -37,6 +39,10 @@ app.use(function(req, res, next){
   next()
 })
 
+// for parsing application/x-www-form-urlencoded
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+
 /* ***********************
  * View Engine and Templates
  *************************/
@@ -57,6 +63,8 @@ app.get(
 )
 // Inventory routes
 app.use("/inv", inventoryRoute)
+// Account routes
+app.use("/account", require("./routes/accountRoute"))
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
   next({status: 404, message: 'Sorry, we appear to have lost that page.'})
