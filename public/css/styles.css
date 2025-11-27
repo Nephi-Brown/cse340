@@ -157,12 +157,10 @@ a {
 
 /* Flash message */
 .flash-message {
-  background: #ffe5e5;
-  color: #8b0000;
+  color: rgb(198, 2, 2);
   margin: 10px 0;
   padding: 12px 16px;
   font-weight: 600;
-  text-align: ;
   text-decoration: none;
   border: none;
 }
@@ -251,7 +249,7 @@ a {
 
 /* Validation error messages (red text) */
 .notice {
-  color: red;
+  color: rgb(203, 5, 5);
   font-weight: 600;
   margin: 10px 0;
   padding: 12px 16px;
@@ -312,8 +310,7 @@ main {
 
 /* *************** Welcome ************* */
  #messages {
-  background-color: #ffe5e5;
-  color: #b30000; /* deep red text */
+  color: rgb(197, 4, 4); /* deep red text */
   padding: 12px 16px;
   margin: 10px 0;
   font-weight: 600;
@@ -567,6 +564,392 @@ main {
   line-height: 1.6;
 }
 
+/* ================ Vehicle Detail - No Image Style ==================== */
+
+.vehicle-image-wrapper {
+  width: 350px;
+  height: 350px;
+  border: 4px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  background-color: #fafafa;
+}
+
+.vehicle-image-wrapper img {
+  width: 65%;
+  opacity: 0.6;
+}
+
+.vehicle-detail-container {
+  display: flex;
+  gap: 3rem;
+  margin-top: 1.5rem;
+}
+
+.vehicle-info-box {
+  background: #f5f5f5;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  width: 250px;
+}
+
+.vehicle-info-box p {
+  margin: 0.5rem 0;
+}
+
+.vehicle-info-box strong {
+  font-weight: bold;
+}
+
+
+/* ================= Inventory Management Page =========================== */
+
+#inv-management {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.inv-management-panel {
+  background: #ffffff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 6px 18px rgba(54, 174, 230, 0.915);
+  text-align: center;
+}
+
+.inv-management-panel p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #374151;
+}
+
+.inv-management-actions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inv-management-actions li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  background-color: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.inv-management-actions li a:hover {
+  background-color: var(--accent-2);
+}
+
+/* Optional: space for flash message */
+.flash-message {
+  margin-bottom: 1.5rem;
+}
+
+/* Classification list inside inventory management */
+.classification-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  text-align: left;
+}
+
+.classification-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.classification-list span {
+  font-weight: 600;
+  color: #111827;
+}
+
+.classification-list form button {
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.classification-list form button:hover {
+  background: #b91c1c;
+}
+
+/* Delete Classification by Name form */
+.delete-by-name-form {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid #e5e7eb;
+  text-align: left;
+}
+
+.delete-by-name-form h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.delete-by-name-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.delete-by-name-form input[type="text"] {
+  width: 100%;
+  max-width: 280px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #111827;
+  font-size: 1rem;
+}
+
+.delete-by-name-form button {
+  margin-top: 0.75rem;
+  padding: 0.4rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  background: #dc2626;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.delete-by-name-form button:hover {
+  background: #b91c1c;
+}
+
+/* =========== Add Classification Form Page ============================= */
+
+#add-classification-page {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.inv-form-panel {
+  background: #2b91d9;
+  border-radius: 12px;
+  border: 2px solid #ffffff;
+  padding: 1.75rem 2rem;
+  max-width: 520px;
+  width: 100%;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.form-note {
+  font-weight: 700;
+  font-style: italic;
+  margin: 0 0 1rem;
+}
+
+.field-hint {
+  display: block;
+  font-style: italic;
+  margin: 0 0 0.5rem;
+}
+
+.add-classification-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.add-classification-form label {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.add-classification-form input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  margin-top: 1rem;
+  align-self: flex-start;
+  padding: 0.7rem 2.4rem;
+  border-radius: 999px;
+  border: none;
+  background: #ffffff;
+  color: #111827;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #e5e7eb;
+}
+
+/* =============== Add Inventory Form Page ============================ */
+
+#add-inventory-page {
+  padding: 1.5rem;
+}
+
+.add-inventory-panel {
+  background: #38bdf8;             /* blue panel like example */
+  border-radius: 10px;
+  padding: 1.5rem 1.75rem;
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Small text at top: "ALL FIELDS ARE REQUIRED." */
+.add-inventory-note {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Form layout: vertical stack */
+.add-inventory-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels on their own line */
+.add-inventory-form label {
+  display: block;
+  font-weight: 700;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Inputs / selects / textarea full width */
+.add-inventory-form input,
+.add-inventory-form select,
+.add-inventory-form textarea {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #111827;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Description box a bit taller */
+.add-inventory-form textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+/* Submit button */
+.add-inventory-form button[type="submit"] {
+  margin-top: 1rem;
+  align-self: flex-start;
+  padding: 0.6rem 2.4rem;
+  border-radius: 999px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.add-inventory-form button[type="submit"]:hover {
+  background: #1d4ed8;
+}
+
+/* *************** Add Inventory and Add Classification Form ************* */
+
+/* VALID → light green background */
+.add-inventory-form input:required:valid,
+.add-inventory-form textarea:required:valid,
+.add-classification-form input:required:valid,
+.add-classification-form textarea:required:valid {
+  background-color: #d1fae5; /* light green */
+  border: 1px solid #a7f3d0; /* optional softer border */
+}
+
+/* INVALID → light red/pink background */
+.add-inventory-form input:required:invalid,
+.add-inventory-form textarea:required:invalid,
+.add-classification-form input:required:invalid
+.add-classification-form textarea:required:invalid {
+  background-color: #fee2e2; /* light red */
+  border: 1px solid #fecaca; /* optional softer border */
+}
+
+.add-inventory-form input,
+.add-inventory-form textarea,
+.add-classification-form input:required:invalid
+.add-classification-form textarea:required:invalid {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#account-management {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.account-panel {
+  font-size: 2.2rem;
+  background: #ffffff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 6px 18px rgba(54, 174, 230, 0.915);
+  text-align: center;
+}
+
+.login-notice {
+  font-size: 1.8rem;
+  color: #15803d; /* green */
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.account-actions {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.account-actions li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  background-color: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.account-actions li a:hover {
+  background-color: var(--accent-2);
+}
+
 /* *************** Footer ************* */
 
 footer {
@@ -635,6 +1018,11 @@ footer {
   .vehicle-detail {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
     gap: 2rem;
+  }
+
+  .success-message{
+    color: rgb(7, 221, 50);
+    font-size: 1.2rem;
   }
 }
 

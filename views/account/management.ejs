@@ -1,0 +1,29 @@
+<h1><%= title %></h1>
+
+<% if (typeof messages === "function") { 
+  const flashHtml = messages();
+  if (flashHtml) { %>
+    <div class="flash-message">
+      <%- flashHtml %>
+    </div>
+<%  } 
+} %>
+
+<main id="account-management">
+  <section class="account-panel">
+    <h2>
+      Welcome <%= accountData && accountData.account_firstname 
+        ? accountData.account_firstname 
+        : "New" %>
+    </h2>
+
+    <p class="login-notice">You're logged in.</p>
+
+    <p>
+      <a href="/account/edit" class="account-edit-link">
+        Edit Account Information
+      </a>
+    </p>
+  </section>
+</main>
+

@@ -1,0 +1,123 @@
+<h1><%= title %></h1>
+
+<% if (typeof messages === "function") { 
+  const flashHtml = messages();
+  if (flashHtml) { %>
+    <div class="flash-message">
+      <%- flashHtml %>
+    </div>
+<%  } } %>
+
+<% if (errors) { %>
+  <ul class="notice">
+    <% errors.array().forEach(error => { %>
+      <li><%= error.msg %></li>
+    <% }) %>
+  </ul>
+<% } %>
+
+<section id="add-inventory-page">
+  <div class="add-inventory-panel">
+    <p class="add-inventory-note">ALL FIELDS ARE REQUIRED.</p>
+
+    <form id="addInventoryForm" action="/inv/add-inventory" method="post" class="add-inventory-form">
+      <label for="classificationList">Classification</label>
+      <%- classificationList %>
+
+      <label for="inv_make">Make</label>
+      <input
+        type="text"
+        id="inv_make"
+        name="inv_make"
+        required
+        minlength="2"
+        placeholder="e.g., Ford"
+        value="<%= inv_make %>">
+
+      <label for="inv_model">Model</label>
+      <input 
+        type="text"
+        id="inv_model" 
+        name="inv_model"
+        required
+        minlength="2"
+        placeholder="e.g., Fiesta"
+        value="<%= inv_model %>">
+
+      <label for="inv_year">Year (4 digits)</label>
+      <input
+        type="number"
+        id="inv_year" 
+        name="inv_year"
+        required
+        pattern="^\d{4}$"
+        min="1980"
+        max="2100"
+        placeholder="e.g., 2017"
+        value="<%= inv_year %>">
+
+      <label for="inv_description">Description</label>
+      <textarea 
+        id="inv_description" 
+        name="inv_description"
+        required
+        minlength="10"
+        rows="8"
+        placeholder="Brief description of the vehicle"><%= inv_description %></textarea>
+
+      <label for="inv_image">Image Path</label>
+      <input 
+        type="text"
+        id="inv_image" 
+        name="inv_image"
+        required
+        placeholder="/images/vehicles/no-image.png"
+        value="<%= inv_image %>">
+
+      <label for="inv_thumbnail">Thumbnail Path</label>
+      <input 
+        type="text"
+        id="inv_thumbnail" 
+        name="inv_thumbnail"
+        required
+        placeholder="/images/vehicles/no-image-tn.png"
+        value="<%= inv_thumbnail %>">
+
+      <label for="inv_price">Price</label>
+      <input 
+        type="number"
+        id="inv_price" 
+        name="inv_price"
+        required
+        min="1"
+        step="0.01"
+        placeholder="e.g., 15999.99"
+        value="<%= inv_price %>">
+
+      <label for="inv_miles">Miles</label>
+      <input 
+        type="number"
+        id="inv_miles" 
+        name="inv_miles"
+        required
+        min="0"
+        step="1"
+        placeholder="e.g., 39500"
+        value="<%= inv_miles %>">
+
+      <label for="inv_color">Color</label>
+      <input 
+        type="text"
+        id="inv_color"
+        name="inv_color"
+        required
+        minlength="3"
+        placeholder="e.g., Red"
+        value="<%= inv_color %>">
+
+      <button type="submit">Add Vehicle</button>
+    </form>
+  </div>
+</section>
+
+<script src="/js/addInventoryValidation.js"></script>

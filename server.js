@@ -17,6 +17,7 @@ const utilities = require("./utilities/")
 const inventoryRoute = require("./routes/inventoryRoute")
 const accountRoute = require("./routes/accountRoute") 
 const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser")
 
 /* ***********************
  * Middleware
@@ -32,6 +33,7 @@ app.use(session({
   name: 'sessionId',
 }))
 
+
 // Express Messages Middleware
 app.use(require('connect-flash')())
 app.use(function(req, res, next){
@@ -42,6 +44,12 @@ app.use(function(req, res, next){
 // for parsing application/x-www-form-urlencoded
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+
+// Login activity
+app.use(cookieParser())
+
+// Login Process activity
+app.use(utilities.checkJWTToken)
 
 /* ***********************
  * View Engine and Templates
@@ -69,6 +77,10 @@ app.use("/account", require("./routes/accountRoute"))
 app.use(async (req, res, next) => {
   next({status: 404, message: 'Sorry, we appear to have lost that page.'})
 })
+// Inventory routes
+app.use("/inv", inventoryRoute)
+app.use(express.static("public"))
+
 
 /* ***********************
     Express Error Handler
