@@ -950,6 +950,180 @@ main {
   background-color: var(--accent-2);
 }
 
+/* ================= Delete Inventory Form =================== */
+
+.delete-form {
+  max-width: 360px;
+  margin: 1.5rem auto 2rem;
+  padding: 1.25rem 1.5rem;
+  background: #2b91d9;           /* blue panel like sample */
+  border-radius: 10px;
+  border: 2px solid #e5eef7;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.delete-form label {
+  display: block;                /* force label on its own line */
+  font-weight: 600;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.delete-form input[type="text"] {
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #111827;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Delete button */
+.delete-form .delete-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1.8rem;
+  border-radius: 4px;
+  border: 2px solid #000;
+  background: #f97316;           /* orange-ish like your other buttons */
+  color: white;
+  font-weight: 800;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.delete-form .delete-btn:hover {
+  background: #e55609;
+}
+
+/* ===========================================================
+   ACCOUNT UPDATE + CHANGE PASSWORD PAGE STYLES
+   Matches Login / Registration Panels
+   =========================================================== */
+
+   #account-update-page {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+  }
+  
+  /* Each panel (Account Update + Change Password) */
+  .account-update-panel {
+    background: #ffffff;
+    padding: 2rem 2.5rem;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    max-width: 520px;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  /* Headings inside panels */
+  .account-update-panel h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #111827;
+  }
+  
+  /* =============== SHARED FORM STYLING =================== */
+  
+  .account-update-form,
+  .password-change-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .account-update-form label,
+  .password-change-form label {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+  
+  .account-update-form input[type="text"],
+  .account-update-form input[type="email"],
+  .password-change-form input[type="password"] {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 6px;
+    border: 2px solid #111827;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background: #ffffff;
+  }
+  
+  /* Focus styling */
+  .account-update-form input:focus,
+  .password-change-form input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 4px rgba(37, 99, 235, 0.35);
+  }
+  
+  /* Small helper text in the top form */
+  .account-update-form .form-note {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Password hint paragraph (you already use .password-hint) */
+  .password-hint {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+  
+  /* =============== BUTTONS ================== */
+  
+  .update-btn {
+    margin-top: 1rem;
+    align-self: flex-start;
+    padding: 0.65rem 2.4rem;
+    border: none;
+    border-radius: 999px;  /* pill shape */
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .update-btn:hover {
+    background: #1d4ed8;
+  }
+  
+  /* Flash + error messages spacing when inside this page */
+  #account-update-page .flash-message,
+  #account-update-page .notice {
+    margin-bottom: 1rem;
+  }
+  
+  .password-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .show-password-btn {
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    border: 1px solid #111827;
+    background: #e5e7eb;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  .show-password-btn:hover {
+    background: #d1d5db;
+  }  
+
 /* *************** Footer ************* */
 
 footer {
@@ -1041,5 +1215,114 @@ footer {
   #inv-display {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==== Edit Inventory Page Layout ==== */
+
+#edit-inventory-page {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 3rem;
+}
+
+/* Blue “card” in the center */
+.edit-inventory-panel {
+  background: #34a9d9;          /* main blue */
+  border-radius: 8px;
+  padding: 1.5rem 2rem 2rem;
+  max-width: 650px;
+  width: 100%;
+  box-shadow: 0 0 0 3px #e5f5fb inset; /* inner border effect */
+}
+
+/* Top note: ALL FIELDS ARE REQUIRED */
+.edit-inventory-note {
+  margin: 0 0 1rem;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #f5faff;
+}
+
+/* ==== Form styling ==== */
+
+.edit-inventory-form {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  padding: 1.2rem 1.5rem 1.5rem;
+}
+
+/* Labels */
+.edit-inventory-form label {
+  display: block;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: #0e3750;
+}
+
+/* Inputs, select, textarea */
+.edit-inventory-form input[type="text"],
+.edit-inventory-form input[type="number"],
+.edit-inventory-form input[type="email"],
+.edit-inventory-form input[type="password"],
+.edit-inventory-form select,
+.edit-inventory-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.45rem 0.5rem;
+  border-radius: 3px;
+  border: 1px solid #b1d9ea;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+}
+
+/* Textarea specific */
+.edit-inventory-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Focus */
+.edit-inventory-form input:focus,
+.edit-inventory-form select:focus,
+.edit-inventory-form textarea:focus {
+  outline: none;
+  border-color: #1779b8;
+  box-shadow: 0 0 0 2px rgba(23, 121, 184, 0.25);
+}
+
+/* Submit button */
+.edit-inventory-form button[type="submit"],
+.edit-inventory-form input[type="submit"] {
+  margin-top: 1.5rem;
+  padding: 0.5rem 1.7rem;
+  border-radius: 4px;
+  border: none;
+  background: #0f3554;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.edit-inventory-form button[type="submit"]:hover,
+.edit-inventory-form input[type="submit"]:hover {
+  background: #0b2840;
+}
+
+/* Small screen tweaks */
+@media (max-width: 600px) {
+  .edit-inventory-panel {
+    margin: 0 0.75rem;
+    padding: 1.25rem 1rem 1.5rem;
+  }
+
+  .edit-inventory-form {
+    padding: 1rem;
+  }
+
+  .account-update-panel {
+    padding: 1.5rem 1.75rem;
   }
 }
